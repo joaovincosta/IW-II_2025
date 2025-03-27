@@ -8,22 +8,19 @@
 <body>
     <script>
 
-        let nota = parseFloat(prompt("qual sua nota?"));
+        let nota = parseFloat(prompt("Olá, aluno! Digite sua nota: "));
 
-        if (isNaN(nota) || nota < 0 || nota > 10) {
-            alert("Nota inválida, digite um número de 1 a 10")
-        }
-        else if (nota >= 7) {
-            console.log("Aprovado!")
-            alert("Aprovado!")
+        if (nota >= 7) {
+            console.log("Parábens, você está aprovado!")
+            alert("Parábens, você está aprovado!")
         }
         else if (nota >= 5 && nota <= 6.9) {
-            console.log("Recuperação!")
-            alert("Recuperação!")
+            console.log("Poxa, você está de recuperação!")
+            alert("Poxa, você está de recuperação!")
         }
         else {
-            console.log("Reprovado")
-            alert("Reprovado")
+            console.log("Ops... você está reprovado!")
+            alert("Ops... você está reprovado!")
         }
 
     </script>
