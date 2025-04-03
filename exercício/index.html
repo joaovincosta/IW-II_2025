@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício IW II - Aula 20/03/2025</title>
+    <title>Exercício IW II - Aula 20/03/2025 | Tratamento de erro - Aula 27/03/2025</title>
 </head>
 <body>
     <script>
 
         let nota = parseFloat(prompt("Olá, aluno! Digite sua nota: "));
 
-        if (nota >= 7) {
-            console.log("Parábens, você está aprovado!")
-            alert("Parábens, você está aprovado!")
+        if (isNaN(nota) || nota < 0 || nota > 10) {
+        alert("Nota inválida: só são aceitos números de 0 a 10. Tente novamente recarregando a página.")
+        }
+
+        else if (nota >= 7) {
+            console.log("Parabéns, você está aprovado!")
+            alert("Parabéns, você está aprovado!")
         }
         else if (nota >= 5 && nota <= 6.9) {
             console.log("Poxa, você está de recuperação!")
