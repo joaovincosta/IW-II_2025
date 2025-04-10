@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IW II - Aula dia 03/04/2025</title>
+</head>
+<body>
+    <script>
+        function exibirMenu() {
+            return prompt(
+                "   MENU INTERATIVO    \n" +
+                "Selecione uma opção:\n" +
+                "1 - Ver mensagem de boas-vindas\n" +
+                "2 - Calcular média de notas\n" +
+                "3 - É hora de dizer tchau\n"
+            );
+        }
+        
+        function executarOpcao(opcao) {
+            switch (opcao) {
+                case "1":
+                    alert("Olá, aluno(a) ou professor(a): seja muito bem-vindo(a) ao menu interativo! Clique em 'ok' para voltar ao menu ");
+                    break;
+                case "2":
+                    let qtdNotas = parseInt(prompt("Com quantas notas você deseja calcular a média?"));
+                    if (isNaN(qtdNotas) || qtdNotas < 2 || qtdNotas > 10) {
+                    alert("Erro: Digite um número entre 2 e 10.");
+                    break;
+                    }
+                    let soma = 0;
+                    let contador = 0;
+
+                    while (contador < qtdNotas) {
+                    let nota = parseFloat(prompt("Digite a nota:"));
+                    if (isNaN(nota) || nota < 0 || nota > 10) {
+                        alert("Erro: Você deve digitar um número válido (entre 0 e 10).");
+                        } else {
+                            soma += nota;
+                            contador++;
+                        }
+                    }
+                    let media = soma / qtdNotas;
+                    alert(`A média das notas é: ${media.toFixed(2)}`);
+                    break;
+                case "3":
+                    alert("Obrigado pela visita, até mais!");
+                    return false; 
+                default:
+                    alert("Erro: opção inválida. Tente novamente.");
+            }
+            return true;
+        }
+        
+        function iniciarMenu() {
+            let continuar = true;
+            while (continuar) {
+                let opcao = exibirMenu();
+                continuar = executarOpcao(opcao);
+            }
+        }
+        
+        iniciarMenu();
+        </script>        
+</body>
+</html>
